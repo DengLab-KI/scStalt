@@ -1,10 +1,10 @@
-Package: scStaLa
+Package: scStalt
 Type: Package
 Title: Single cell stage label tranfer
 Version: 0.1.0
 Author: Qing Luo, Qiaolin Deng
 Maintainer: Qing Luo <qing.luo@ki.se>
-Description: scStaLa porvides a scalable ultrafast method to annotate cell 
+Description: scStalt porvides a scalable ultrafast method to annotate cell 
     states under the reference-query mode. It extracts the trajectory associated
     differentially expressed genes from reference dataset and then smoothed the 
     genes to form a kernel expression profile with which query cells are 
