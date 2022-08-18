@@ -119,6 +119,14 @@ library(scStalt)
 ref = doKernel(count=b1_sub@assays$originalexp@counts, pseudotime = pseudotime, cellWeights = cellWeights, nGenes = 2000, nKnots = 5,nPoints = 100, fdr = 0.05)
 #the paramater nKnots can be optimized using tradeSeq pipeline
 ```
+
+| | Stage 1 | Stage 2| ... | Stage n|
+| ------------- | ------------- |------------- |------------- |------------- |
+| Gene 1 | v11  | v12 | ... | v1n |
+| Gene 2| v21 | v22 |	... | v2n|
+| ... | 	... | ...|	...|
+| Gene k | vk1 |	vk2 | ...|vkn|
+
 #### Step 3
 Now that we have the kernel profile with trajecotry associated dynamic genes in evenly placed pseudo points, we can use the function assgnStage to infer the cell stages of the cells of the query (b2_sub in this case).
 
@@ -134,8 +142,9 @@ query_id$score_cosine = as.numeric(query_id$score_cosine)
 query_id$step =  b2_sub$Step
 NRMSE = RMSE(query_id$lineage_cosine,query_id$step)/99
 R2 = R2_Score(query_id$lineage_cosine,query_id$step)
+```
 
-
+```
 plot(query_id$lineage_cosine,
      query_id$step,pch=16,cex=.5,
      xlab="Observed cell stage",
@@ -145,6 +154,7 @@ text(x = 30, y = 70, labels = paste0("R2 =",round(R2,2)))
 text(x = 33, y = 65, labels = paste0("NRMSE =",round(NRMSE,2)))
 
 ```
+<img src="./plots/eval.png" width="300" height="300"/>
 
 #### Data integration
 In despite of the trajectory inference through reference-query, our method can also be used to integrate the two datasets.
