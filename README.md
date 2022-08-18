@@ -85,7 +85,7 @@ DimPlot(bm ,group.by = "col",
 #As expected, there is no clear structure regarding cell process from 
 #undifferentiated cell to differentiated cells.
 ```
-<img src="./plots/p2.png" width="600" height="500" />
+<img src="./plots/p2.png" width="400" height="350" />
 
 ## scStalt workflow
 scStalt is written to solve the aforementioned problem. The method basically has three steps
@@ -173,7 +173,7 @@ DimPlot(bm_stalt_corrected ,group.by = "batch",
         cols = c("#92a8d1","#3e4444"))+coord_fixed(ratio=1)
 ```
 
-<img src="./plots/pc2.png" width="600" height="500" center=T/>
+<img src="./plots/pc2.png" width="400" height="350"/>
 
 ```
 DimPlot(bm_stalt_corrected ,group.by = "col",
