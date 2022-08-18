@@ -10,5 +10,7 @@ corresponding stages. The method can also be utilized to perform integration wit
 
 To install:
 
+```
 library(devtools)
 devtools::install_github("DengLab-KI/scStalt")
+```
