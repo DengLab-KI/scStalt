@@ -66,7 +66,9 @@ bm = NormalizeData(bm,verbose = F)
 bm = FindVariableFeatures(bm,verbose = F)
 bm = ScaleData(bm ,verbose = F)
 bm = RunPCA(bm ,verbose = F)
+```
 
+```
 #Below we plot the cell batch information on the PCA plot
 DimPlot(bm ,group.by = "Batch",
         reduction = "pca",
@@ -74,7 +76,8 @@ DimPlot(bm ,group.by = "Batch",
         
 #We can see clearly that the two batches of cells are seperated disregarding 
 #that they are cells from the same differentiaon process
-
+```
+```
 #We can also see the cell process
 DimPlot(bm ,group.by = "col",
         reduction = "pca",
@@ -82,6 +85,7 @@ DimPlot(bm ,group.by = "col",
 #As expected, there is no clear structure regarding cell process from 
 #undifferentiated cell to differentiated cells.
 ```
+<img src="./plots/p2.png" width="600" height="400" />
 
 ## scStalt workflow
 scStalt is written to solve the aforementioned problem. The method basically has three steps
@@ -162,11 +166,16 @@ bm_stalt_corrected = NormalizeData(bm_stalt_corrected)
 bm_stalt_corrected = FindVariableFeatures(bm_stalt_corrected)
 bm_stalt_corrected = ScaleData(bm_stalt_corrected )
 bm_stalt_corrected = RunPCA(bm_stalt_corrected ) 
-
+```
+```
 DimPlot(bm_stalt_corrected ,group.by = "batch",
         reduction = "pca",
         cols = c("#92a8d1","#3e4444"))+coord_fixed(ratio=1)
+```
 
+<img src="./plots/pc2.png" width="600" height="400" />
+
+```
 DimPlot(bm_stalt_corrected ,group.by = "col",
         cols = clustercol,
         pt.size = .5)+coord_fixed(ratio=1)
