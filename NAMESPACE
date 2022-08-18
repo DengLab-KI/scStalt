@@ -1,6 +1,7 @@
 #exportPattern("^[[:alpha:]]+")
 #export('similarity')
 export('stageAssign')
-#export('doKernal')
+export('doKernel')
+export('staltIntegration')
 importFrom('lsa','cosine')
 #importFrom('tradeSeq','Seurat','slingshot')
