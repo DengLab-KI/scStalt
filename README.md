@@ -217,6 +217,8 @@ other attached packages:
 [17] GenomicRanges_1.44.0       [18] GenomeInfoDb_1.28.1        [19] IRanges_2.26.0             [20] S4Vectors_0.30.0           
 [21] BiocGenerics_0.38.0        [22] MatrixGenerics_1.4.2       [23] matrixStats_0.60.0         [24] princurve_2.1.6            
 [25] SeuratObject_4.0.2         [26] Seurat_4.0.3.9015.         [27] scStalt_0.1.0 
+
+
 loaded via a namespace (and not attached):
 [1] utf8_1.2.2                  [2] reticulate_1.20             [3] R.utils_2.10.1              [4] tidyselect_1.1.1         
 [5] htmlwidgets_1.5.3           [6] grid_4.1.1                  [7] combinat_0.0-8              [8] docopt_0.7.1             
@@ -258,7 +260,8 @@ loaded via a namespace (and not attached):
 [149] irlba_2.3.3               [150] future.apply_1.7.0       
 ```
 
-# Reference
+# Citation
+
 # Contact
 Qing Luo (qing.luo@ki.se), 
 Qiaolin Deng (qiaolin.deng@ki.se)
