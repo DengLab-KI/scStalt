@@ -1,5 +1,6 @@
 # scStalt (single-cell stage label transfer) 
 Author: Qing Luo (qing.luo@ki.se), Qiaolin Deng (qiaolin.deng@ki.se)
+
 https://www.thedenglab.org/
 
 ## Summary
