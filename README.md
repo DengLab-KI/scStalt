@@ -1,4 +1,6 @@
-# scStalt
+# scStalt (single-cell stage label transfer) 
+Author: Qing Luo (qing.luo@ki.se), Qiaolin Deng (qiaolin.deng@ki.se)
+https://www.thedenglab.org/
 
 ## Summary
 scStalt porvides a scalable ultrafast method to annotate cell states under the reference-query mode. It extracts the trajectory associated differentially expressed genes from reference dataset and then smoothed the genes to form a kernel expression profile with which query cells are assigned to their corresponding stages. The method can also be utilized to perform integration with mosaic datasets.
@@ -22,7 +24,7 @@ We will load two dataset, b1_sub and b2_sub, which are two mosaic datasets:
    process from step 1 to step 100; (codes for generating b1_sub and b2_sub is available in )
 (2)b1_sub and b2_sub contains different cell stages. Here we have b1_sub containning cells from step 1-20, 40-60 and 80-100, 
    whereas b2_sub containing cells from step 30-35 and 70-75
-In this case, current trajectory inference (TI) methods could not infer differentiation stages for b2_sub. Meanwhile, current integration methods such as Seurat CCA, MNN or Harmony could not perfectly integrate b_sub1 and b_sub2 since they are mosaic. For details, please refer to our (bechmark result) [https://github.com/DengLab-KI/scStalt_BenchmarkingResult]
+In this case, current trajectory inference (TI) methods could not infer differentiation stages for b2_sub. Meanwhile, current integration methods such as Seurat CCA, MNN or Harmony could not perfectly integrate b_sub1 and b_sub2 since they are mosaic. For details, please refer to our [bechmark result](https://github.com/DengLab-KI/scStalt_BenchmarkingResult).
 
 
 ```{r loadpkg,echo=T,message=FALSE,warning=F}
@@ -92,7 +94,7 @@ scStalt is written to solve the aforementioned problem. The method basically has
 
 #### Step 1
 First we will need to infer the pseudotime trajectory using the reference dataset (b1_sub in this case). In this tutorial, 
-we used R package [Slingshot] (https://github.com/kstreet13/slingshot). Other trajectory inference methods should also work.
+we used R package [Slingshot](https://github.com/kstreet13/slingshot). Other trajectory inference methods should also work.
 ```{r Step1, echo=T,message=F,warning=F}
 #for details, please refer to Slingshot
 b_sub = b1_sub
