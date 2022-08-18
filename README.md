@@ -22,7 +22,7 @@ We will load two dataset, b1_sub and b2_sub, which are two mosaic datasets:
    process from step 1 to step 100; (codes for generating b1_sub and b2_sub is available in )
 (2)b1_sub and b2_sub contains different cell stages. Here we have b1_sub containning cells from step 1-20, 40-60 and 80-100, 
    whereas b2_sub containing cells from step 30-35 and 70-75
-In this case, current trajectory inference (TI) methods could not infer differentiation stages for b2_sub. Meanwhile, current integration methods such as Seurat CCA, MNN or Harmony could not perfectly integrate b_sub1 and b_sub2 since they are mosaic. For details, please refer to our bechmark result <https://github.com/DengLab-KI/scStalt_BenchmarkingResult>
+In this case, current trajectory inference (TI) methods could not infer differentiation stages for b2_sub. Meanwhile, current integration methods such as Seurat CCA, MNN or Harmony could not perfectly integrate b_sub1 and b_sub2 since they are mosaic. For details, please refer to our [bechmark result] (https://github.com/DengLab-KI/scStalt_BenchmarkingResult)
 
 
 ```{r loadpkg,echo=T,message=FALSE,warning=F}
@@ -173,7 +173,7 @@ DimPlot(bm_stalt_corrected ,group.by = "batch",
         cols = c("#92a8d1","#3e4444"))+coord_fixed(ratio=1)
 ```
 
-<img src="./plots/pc2.png" width="400" height="350"/>
+<img src="./plots/pc2.png" width="400" height="300"/>
 
 ```
 DimPlot(bm_stalt_corrected ,group.by = "col",
