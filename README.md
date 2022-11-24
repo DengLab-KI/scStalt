@@ -19,10 +19,10 @@ devtools::install_github("DengLab-KI/scStalt")
 
 We will load two dataset, b1_sub and b2_sub, which are two mosaic datasets:
 (1)b1_sub and b2_sub are two batches of cells that belong to the same simulated cell differentation 
-   process from step 1 to step 100; (codes for generating b1_sub and b2_sub is available in )
+   process from step 1 to step 100; 
 (2)b1_sub and b2_sub contains different cell stages. Here we have b1_sub containning cells from step 1-20, 40-60 and 80-100, 
    whereas b2_sub containing cells from step 30-35 and 70-75
-In this case, current trajectory inference (TI) methods could not infer differentiation stages for b2_sub. Meanwhile, current integration methods such as Seurat CCA, MNN or Harmony could not perfectly integrate b_sub1 and b_sub2 since they are mosaic. For details, please refer to our [benchmark result](https://github.com/DengLab-KI/scStalt_BenchmarkingResult).
+In this case, current trajectory inference (TI) methods could not infer differentiation stages for b2_sub. Meanwhile, current integration methods such as Seurat CCA, MNN or Harmony could not perfectly integrate b_sub1 and b_sub2 since they are non-representattive. For details, please refer to our [benchmark result](https://github.com/DengLab-KI/scStalt_BenchmarkingResult).
 
 
 ```{r loadpkg,echo=T,message=FALSE,warning=F}
@@ -112,7 +112,7 @@ cellWeights = slingCurveWeights(b_sub.sce)
 ```
 
 #### Step 2
-Next, we will obtian the kernel gene expression profile using function doKernel. This is to obtain a reletively continous profile with the state-of-art dynamic genes during the cell transition process.
+Next, we will obtain the kernel gene expression profile using function doKernel. This is to obtain a reletively continous profile with the state-of-art dynamic genes during the cell transition process.
 
 ```{r Step2,echo=T,message=F,warning=F}
 library(scStalt)
