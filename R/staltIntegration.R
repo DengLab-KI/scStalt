@@ -1,4 +1,4 @@
-staltIntegration2 <- function(count1,count2,nPoints=100,ref) {
+staltIntegration <- function(count1,count2,nPoints=100,ref) {
     genes = rownames(ref)
     b1_c= count1[genes,]
     b2_c = count2[genes,]
