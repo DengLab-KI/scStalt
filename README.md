@@ -3,7 +3,7 @@
 ## Summary
 scStalt porvides a scalable ultrafast method to annotate cell states under the reference-query mode. It extracts the trajectory associated differentially expressed genes from reference dataset and then smoothed the genes to form a kernel expression profile with which query cells are assigned to their corresponding stages. The method can also be utilized to perform integration with non-representative datasets from the same trajectory.
 
-In this tutorial, we will generate two non-representative datasets differential datasets, each encompassing varied cellular stages. And then we will use scStalt to infer the psuedotime of the query dataset as well as integrate the two datasets with batch correction. 
+In this tutorial, we will generate two non-representative datasets, each encompassing varied cellular stages. And then we will use scStalt to infer the psuedotime of the query dataset as well as integrate the two datasets with batch correction. 
 
 
 ## Installation
