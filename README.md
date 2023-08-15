@@ -261,6 +261,9 @@ loaded via a namespace (and not attached):
 ```
 
 # Citation
+Luo Q, Pui H, Chen J, Yu L, Jannig PR, Pei Y, Zhao L, Petropoulos S, Chen X, Ruas JL, Wu J, Deng
+Q. Epiblast-Like Stem Cells Established by Wnt/β-Catenin Signaling Manifest Distinct Features of
+Formative Pluripotency. Cell reports (2023)
 
 # Contact
 Qing Luo (qing.luo@ki.se), 
