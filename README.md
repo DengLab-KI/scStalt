@@ -135,17 +135,19 @@ query_b2 = b2_sub@assays$originalexp@data[rownames(ref),]
 query_b2 = as.data.frame(query_b2)
 query_id = stageAssign(count = query_b2,kernel = log2(ref+1))
 query_id = as.data.frame(query_id)
-query_id$lineage_cosine = as.numeric(query_id$lineage_cosine)
-query_id$score_cosine = as.numeric(query_id$score_cosine)
+
+
+query_id$cosine_similarity_score = as.numeric(query_id$cosine_similarity_score)
+query_id$stage_assigned = as.numeric(query_id$stage_assigned)
 
 #Since it's simulated data, we can compare the true cell stages and the scStalt inferred stages.
 query_id$step =  b2_sub$Step
-NRMSE = RMSE(query_id$lineage_cosine,query_id$step)/99
-R2 = R2_Score(query_id$lineage_cosine,query_id$step)
+NRMSE = RMSE(query_id$stage_assigned,query_id$step)/99
+R2 = R2_Score(query_id$stage_assigned,query_id$step)
 ```
 
 ```
-plot(query_id$lineage_cosine,
+plot(query_id$stage_assigned,
      query_id$step,pch=16,cex=.5,
      xlab="Observed cell stage",
      ylab="True cell stage")
@@ -171,7 +173,7 @@ bm_stalt_corrected = CreateSeuratObject(bm_stalt_corrected)
 bm_stalt_corrected$batch = bm$Batch
 bm_stalt_corrected$col = bm$col
 bm_stalt_corrected$step = c(b1_sub$Step,b2_sub$Step)
-#bm_stalt_corrected$lineage =c(b1_id$lineage_cosine,b2_id$lineage_cosine)
+#bm_stalt_corrected$lineage =c(b1_id$stage_assigned,b2_id$stage_assigned)
 bm_stalt_corrected = NormalizeData(bm_stalt_corrected)
 bm_stalt_corrected = FindVariableFeatures(bm_stalt_corrected)
 bm_stalt_corrected = ScaleData(bm_stalt_corrected )
