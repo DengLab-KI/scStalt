@@ -128,7 +128,7 @@ ref = doKernel(count=b1_sub@assays$originalexp@counts, pseudotime = pseudotime, 
 | Gene k | vk1 |	vk2 | ...|vkn|
 
 #### Step 3
-Now that we have the kernel profile with trajecotry associated dynamic genes in evenly placed pseudo points, we can use the function assgnStage to infer the cell stages of the cells of the query (b2_sub in this case).
+Now that we have the kernel profile with trajecotry associated dynamic genes in evenly placed pseudo points, we can use the function stageAssign to infer the cell stages of the cells of the query (b2_sub in this case).
 
 ```{r Step3,echo=T,message=F,warning=F}
 query_b2 = b2_sub@assays$originalexp@data[rownames(ref),]
