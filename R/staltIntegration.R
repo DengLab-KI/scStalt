@@ -48,7 +48,7 @@ staltIntegration <- function(count1,count2,nPoints=100,ref) {
         s2[is.na(s2)]=0
         s2[is.infinite(s2)]=0
          b2_c[,which(b2_id$lstage_assigned==i)] =
-           (  b2_c,which(b2_id$stage_assigned==i)] +.1)*s2
+           (  b2_c[,which(b2_id$stage_assigned==i)] +.1)*s2
     }
     bm_corrected = cbind(b1_c , b2_c)
     #x =2^bm_corrected -1
