@@ -50,7 +50,7 @@ staltIntegration <- function(count1,count2,nPoints=100,ref) {
         count2[,which(b2_id$lstage_assigned==i)] =
            ( b2_c[,which(b2_id$stage_assigned==i)] +.1)*s2
     }
-    g = interscect(rownames(count1),rownames(count2)
+    g = intersect(rownames(count1),rownames(count2)
     bm_corrected = cbind(count1[g,] ,count2[g,])
     #x =2^bm_corrected -1
     x= round( bm_corrected)
