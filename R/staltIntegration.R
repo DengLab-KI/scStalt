@@ -38,7 +38,7 @@ staltIntegration <- function(count1,count2,nPoints=100,ref) {
         s1 = (ref[,i]) /d1
         s1[is.na(s1)]=0
         s1[is.infinite(s1)]=0
-        b1_c[,which(b1_id$lineage_cosine==i)] =
+        count1[,which(b1_id$lineage_cosine==i)] =
            ( b1_c[,which(b1_id$lineage_cosine==i)] +.1) *s1
 
         d2 = rowMeans(b2_c [,c(which(b2_id$stage_assigned==i),
@@ -47,10 +47,11 @@ staltIntegration <- function(count1,count2,nPoints=100,ref) {
         s2 = (ref[,i])  /d2
         s2[is.na(s2)]=0
         s2[is.infinite(s2)]=0
-        b2_c[,which(b2_id$lstage_assigned==i)] =
+        count2[,which(b2_id$lstage_assigned==i)] =
            ( b2_c[,which(b2_id$stage_assigned==i)] +.1)*s2
     }
-    bm_corrected = cbind(b1_c ,b2_c)
+    g = interscect(rownames(count1),rownames(count2)
+    bm_corrected = cbind(count1[g,] ,count2[g,])
     #x =2^bm_corrected -1
     x= round( bm_corrected)
     return( x)
