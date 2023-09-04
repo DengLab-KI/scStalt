@@ -32,8 +32,8 @@ staltIntegration <- function(count1,count2,nPoints=100,ref) {
         ### rowMeans reports error when there is only one column,
         ## therefore we use to which to ensure there are at least two columns
         ## meanwhile the rowmeans would be the same
-        d1 = rowMeans(b1_c[, c(which(b1_id$lineage_cosine==i),
-                               which(b1_id$lineage_cosine==i))])
+        d1 = rowMeans(b1_c[, c(which(b1_id$stage_assigned==i),
+                               which(b1_id$stage_assigned==i))])
 
         s1 = (ref[,i]) /d1
         s1[is.na(s1)]=0
@@ -41,8 +41,8 @@ staltIntegration <- function(count1,count2,nPoints=100,ref) {
         b1_c[,which(b1_id$lineage_cosine==i)] =
            ( b1_c[,which(b1_id$lineage_cosine==i)] +.1) *s1
 
-        d2 = rowMeans(b2_c [,c(which(b2_id$lineage_cosine==i),
-                               which(b2_id$lineage_cosine==i))])
+        d2 = rowMeans(b2_c [,c(which(b2_id$stage_assigned==i),
+                               which(b2_id$stage_assigned==i))])
         #s = (d1)/(d2)
         s2 = (ref[,i])  /d2
         s2[is.na(s2)]=0
