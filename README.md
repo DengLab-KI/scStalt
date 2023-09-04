@@ -165,7 +165,7 @@ We will use the psuedotime kernel profile of the reference to generate pseudo an
 ```{r integration, echo=T,message=F,warning=F}
 count1= as.data.frame(b1_sub@assays$originalexp@counts)
 count2=as.data.frame(b2_sub@assays$originalexp@counts)
-bm_stalt_corrected =staltIntegration(count1=count1,count2=count2, genes=VariableFeatures(bm), nPoints = 100,ref=ref)
+bm_stalt_corrected =staltIntegration(count1=count1,count2=count2, nPoints = 100,ref=ref)
 ```
 We can check the removal of batch effect by PCA plot on the corrected data.
 ```{r checkIntegration, echo=T,message=F,warning=F}
